@@ -1,4 +1,3 @@
 # pleaseclap
-#pleaseclap @ me on Twitter
-
+Tweet #pleaseclap
 WEBSITE : https://lenzfliker.github.io/pleaseclap/
