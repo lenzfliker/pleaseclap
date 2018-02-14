@@ -1,9 +1,23 @@
-<html>
-    <head>
-    <title>👏</title>
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <title>CLAP PLEASE CLAP</title>
+    <style>
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
 </head>
 
 <body>
-    <h1 align="center"> Tweet #pleaseclap </h1>
+    <audio id="clap" src="clap.mp3" preload="auto"></audio>
+    <img src="clap.png" onclick="document.getElementById('clap').play();" alt="clap" width="50%">
 </body>
+
 </html>
