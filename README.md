@@ -1,4 +1,4 @@
 # CLAP PLEASE CLAP
-TWEET #pleaseclap ; I'LL 👏 @ YOU
+TWEET 👏👏👏 ; I'LL RT!
 
 WEBSITE : https://lenzfliker.github.io/pleaseclap/
