@@ -1,4 +1,3 @@
-# CLAP PLEASE CLAP
-TWEET 👏👏👏 ; I'LL RT!
+# PLEASE CLAP :clap:
 
 WEBSITE : https://lenzfliker.github.io/pleaseclap/
