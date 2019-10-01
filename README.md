@@ -4,3 +4,7 @@
 
 REPO ![HitCount](http://hits.dwyl.io/lenzfliker/pleaseclap.svg)  
 WEBSITE : https://lenzfliker.github.io/pleaseclap/
+
+STATUS: OFFLINE
+BOT: DED
+OWNER: DEPRESSED
