@@ -32,13 +32,29 @@
         .center{
             margin: auto;
         }
+        .footer{
+        position:fixed;
+        left:0px;
+        bottom:0px;
+        height:22px;
+    width:100%;
+    background:rgba(255,255,255,0.2);
+    text-align: center;
+    font-family: 'arial';
+    color:rgba(255,255,255,0.3);
+        }
     </style>
 </head>
 
 <body>
 
     <audio id="clap" src="clap.mp3" preload="auto"></audio>
+    
     <img src="clap.png" onclick="document.getElementById('clap').play();" alt="clap" width="50%">
+    <div class="footer">
+      Tweet #Pleaseclap 👏
+    </div>
+
   <canvas id="c"></canvas>
 
   
@@ -46,22 +62,22 @@
 
     <script>
     //Script for the scale on hover effect
-    var buttonEl = document.querySelector('img');
+      var buttonEl = document.querySelector('img');
 
     function animateButton(scale, duration, elasticity) {
       anime.remove(buttonEl);
       anime({
         targets: buttonEl,
         scale: scale,
-        duration: duration,
+          duration: duration,
         elasticity: elasticity
       });
     }
 
-    function enterButton() { animateButton(1.2, 800, 400) };
+      function enterButton() { animateButton(1.2, 800, 400) };
     function leaveButton() { animateButton(1.0, 600, 300) };
 
-    buttonEl.addEventListener('mouseenter', enterButton, false);
+      buttonEl.addEventListener('mouseenter', enterButton, false);
     buttonEl.addEventListener('mouseleave', leaveButton, false);
 
     </script>
