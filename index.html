@@ -29,44 +29,32 @@
             height: 100vh;
             cursor: pointer;
       }
-      .center{
-        margin: auto;
-
-      }
-
- /*       .button {
-            margin-bottom: 50px;
-            display: inline-block;
-            padding: 15px 25px;
-            font-size: 24px;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            outline: none;
-            color: #fff;
-            background-color: #69BDE8;
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 9px #999;
+        .center{
+            margin: auto;
         }
-
-        .button:hover {
-            background-color: #1A2835;
+        .footer{
+        position:fixed;
+        left:0px;
+        bottom:0px;
+        height:22px;
+    width:100%;
+    background:rgba(255,255,255,0.2);
+    text-align: center;
+    font-family: 'arial';
+    color:rgba(255,255,255,0.3);
         }
-
-        .button:active {
-            background-color: #1A2835;
-            box-shadow: 0 5px #666;
-            transform: translateY(4px);
-        }*/
-
     </style>
 </head>
 
 <body>
 
     <audio id="clap" src="clap.mp3" preload="auto"></audio>
+    
     <img src="clap.png" onclick="document.getElementById('clap').play();" alt="clap" width="50%">
+    <div class="footer">
+      Tweet #Pleaseclap 👏
+    </div>
+
   <canvas id="c"></canvas>
 
   
@@ -74,29 +62,25 @@
 
     <script>
     //Script for the scale on hover effect
-    var buttonEl = document.querySelector('img');
+      var buttonEl = document.querySelector('img');
 
     function animateButton(scale, duration, elasticity) {
       anime.remove(buttonEl);
       anime({
         targets: buttonEl,
         scale: scale,
-        duration: duration,
+          duration: duration,
         elasticity: elasticity
       });
     }
 
-    function enterButton() { animateButton(1.2, 800, 400) };
+      function enterButton() { animateButton(1.2, 800, 400) };
     function leaveButton() { animateButton(1.0, 600, 300) };
 
-    buttonEl.addEventListener('mouseenter', enterButton, false);
+      buttonEl.addEventListener('mouseenter', enterButton, false);
     buttonEl.addEventListener('mouseleave', leaveButton, false);
 
-
-
-
     </script>
-    <!--<center><a href="https://twitter.com/ClapPleaseClap"><button class="button">@CLAPPLEASECLAP</button></a></center>-->
 </body>
 
 </html>
