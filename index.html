@@ -43,6 +43,15 @@
     font-family: 'arial';
     color:rgba(255,255,255,0.3);
         }
+        h3{
+           position: absolute;
+           width:100%;
+           top: 70%;
+           margin-top:30px;
+           text-align: center;
+           color:#fff;
+           font-family: Arial, Helvetica, sans-serif;
+        }
     </style>
 </head>
 
@@ -50,15 +59,15 @@
 
     <audio id="clap" src="clap.mp3" preload="auto"></audio>
     
-    <img src="clap.png" data-tilt data-tilt-scale="1.1" 
-        data-tilt-glare="true" data-tilt-maxGlare="0.5" onclick="document.getElementById('clap').play();" alt="clap" width="50%">
+    <img id="clap" src="clap.png" data-tilt data-tilt-scale="1.2" 
+        data-tilt-glare="true" data-tilt-maxGlare="0.5" onclick="document.getElementById('clap').play(); clapClick()" alt="clap" width="50%">
     <div class="footer">
       Tweet #Pleaseclap 👏
     </div>
 
-  <canvas id="c"></canvas>
+  <canvas id="c" ></canvas>
 
-  
+  <h3 id="counter" >..<br>Claps</h3>
     <script src="fireworks.js"></script>
 
     <script>
@@ -87,7 +96,43 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
 
-   
+    <script>
+      k={a:"a"};
+      $(document).ready(function(){
+          $.ajax({
+          url: 'https://notnav.000webhostapp.com/pleaseClapCount.php',
+          data: k,
+          dataType: 'json',
+          success: function(data)
+          {
+            $("#counter").html(String(data) + "<br> Claps")
+          } ,
+          error: function(e)
+          {
+            console.log(e)
+          }
+        })
+      })
+
+      //function to update the clap counter
+      function clapClick(){
+        clickCount = 0
+          $.ajax({
+          url: 'https://notnav.000webhostapp.com/pleaseClapCount.php',
+          data: k,
+          dataType: 'json',
+          success: function(data)
+          {
+              $("#counter").html(String(data) + "<br> Claps")
+          } ,
+          error: function(e)
+          {
+            console.log(e)
+          }
+        })
+      }
+    </script>
+
   </body>
 
 </html>
