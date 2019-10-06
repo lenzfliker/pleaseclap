@@ -20,7 +20,7 @@
            top: 50%;
            margin-left: -100px;
            margin-top: -100px;
-
+          filter: drop-shadow(0px 0px 50px rgba(0,0,0,0.3));
         }
 
         canvas {
@@ -50,7 +50,8 @@
 
     <audio id="clap" src="clap.mp3" preload="auto"></audio>
     
-    <img src="clap.png" onclick="document.getElementById('clap').play();" alt="clap" width="50%">
+    <img src="clap.png" data-tilt data-tilt-scale="1.1" 
+        data-tilt-glare="true" data-tilt-maxGlare="0.5" onclick="document.getElementById('clap').play();" alt="clap" width="50%">
     <div class="footer">
       Tweet #Pleaseclap 👏
     </div>
@@ -62,7 +63,7 @@
 
     <script>
     //Script for the scale on hover effect
-      var buttonEl = document.querySelector('img');
+     /* var buttonEl = document.querySelector('img');
 
     function animateButton(scale, duration, elasticity) {
       anime.remove(buttonEl);
@@ -74,13 +75,19 @@
       });
     }
 
-      function enterButton() { animateButton(1.2, 800, 400) };
+    function enterButton() { animateButton(1.2, 800, 400) };
     function leaveButton() { animateButton(1.0, 600, 300) };
 
-      buttonEl.addEventListener('mouseenter', enterButton, false);
+    buttonEl.addEventListener('mouseenter', enterButton, false);
     buttonEl.addEventListener('mouseleave', leaveButton, false);
-
+*/
     </script>
-</body>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+
+   
+  </body>
 
 </html>
