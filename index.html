@@ -2,137 +2,115 @@
 <html lang="">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="favicon.ico" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
 
-    <title>PLEASE CLAP</title>
-    <style>
-    html,body{
-      margin:0;
+  <title>PLEASE CLAP</title>
+  <style>
+    html,
+    body {
+      margin: 0;
     }
-        img {
-          width: 200px;
-           height: 200px;
-           position: absolute;
-           left: 50%;
-           top: 50%;
-           margin-left: -100px;
-           margin-top: -100px;
-          filter: drop-shadow(0px 0px 50px rgba(0,0,0,0.3));
-        }
 
-        canvas {
-            display: block;
-            width: 100vw;
-            height: 100vh;
-            cursor: pointer;
-      }
-        .center{
-            margin: auto;
-        }
-        .footer{
-        position:fixed;
-        left:0px;
-        bottom:0px;
-        height:22px;
-    width:100%;
-    background:rgba(255,255,255,0.2);
-    text-align: center;
-    font-family: 'arial';
-    color:rgba(255,255,255,0.3);
-        }
-        h3{
-           position: absolute;
-           width:100%;
-           top: 70%;
-           margin-top:30px;
-           text-align: center;
-           color:#fff;
-           font-family: Arial, Helvetica, sans-serif;
-        }
-    </style>
+    img {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -100px;
+      margin-top: -100px;
+      filter: drop-shadow(0px 0px 50px rgba(0, 0, 0, 0.3));
+    }
+
+    canvas {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+      cursor: pointer;
+    }
+
+    .center {
+      margin: auto;
+    }
+
+    .footer {
+      position: fixed;
+      left: 0px;
+      bottom: 0px;
+      height: 22px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      text-align: center;
+      font-family: 'arial';
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    h3 {
+      position: absolute;
+      width: 100%;
+      top: 70%;
+      margin-top: 30px;
+      text-align: center;
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  </style>
 </head>
 
 <body>
 
-    <audio id="clap" src="clap.mp3" preload="auto"></audio>
-    
-    <img id="clap" src="clap.png" data-tilt data-tilt-scale="1.2" 
-        data-tilt-glare="true" data-tilt-maxGlare="0.5" onclick="document.getElementById('clap').play(); clapClick()" alt="clap" width="50%">
-    <div class="footer">
-      Tweet #Pleaseclap 👏
-    </div>
+  <audio id="clap" src="clap.mp3" preload="auto"></audio>
 
-  <canvas id="c" ></canvas>
+  <img id="clap" src="clap.png" data-tilt data-tilt-scale="1.3" data-tilt-glare="true" data-tilt-maxGlare="0.5"
+    onclick="document.getElementById('clap').play(); clapClick()" alt="clap" width="50%">
+  <div class="footer">
+    Tweet #Pleaseclap 👏
+  </div>
 
-  <h3 id="counter" >..<br>Claps</h3>
-    <script src="fireworks.js"></script>
+  <canvas id="c"></canvas>
 
-    <script>
-    //Script for the scale on hover effect
-     /* var buttonEl = document.querySelector('img');
-
-    function animateButton(scale, duration, elasticity) {
-      anime.remove(buttonEl);
-      anime({
-        targets: buttonEl,
-        scale: scale,
-          duration: duration,
-        elasticity: elasticity
-      });
-    }
-
-    function enterButton() { animateButton(1.2, 800, 400) };
-    function leaveButton() { animateButton(1.0, 600, 300) };
-
-    buttonEl.addEventListener('mouseenter', enterButton, false);
-    buttonEl.addEventListener('mouseleave', leaveButton, false);
-*/
-    </script>
+  <h3 id="counter">..<br>Claps</h3>
+  <script src="fireworks.js"></script>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
 
-    <script>
-      k={a:"a"};
-      $(document).ready(function(){
-          $.ajax({
-          url: 'https://notnav.000webhostapp.com/pleaseClapCount.php',
-          data: k,
-          dataType: 'json',
-          success: function(data)
-          {
-            $("#counter").html(String(data) + "<br> Claps")
-          } ,
-          error: function(e)
-          {
-            console.log(e)
-          }
-        })
+  <script>
+    k = { a: "a" };
+    $(document).ready(function () {
+      $.ajax({
+        url: 'https://notnav.000webhostapp.com/pleaseClapCount.php',
+        data: k,
+        dataType: 'json',
+        success: function (data) {
+          $("#counter").html(String(data) + "<br> Claps")
+        },
+        error: function (e) {
+          console.log(e)
+        }
       })
+    })
 
-      //function to update the clap counter
-      function clapClick(){
-        clickCount = 0
-          $.ajax({
-          url: 'https://notnav.000webhostapp.com/pleaseClapCount.php',
-          data: k,
-          dataType: 'json',
-          success: function(data)
-          {
-              $("#counter").html(String(data) + "<br> Claps")
-          } ,
-          error: function(e)
-          {
-            console.log(e)
-          }
-        })
-      }
-    </script>
+    //function to update the clap counter
+    function clapClick() {
+      $.ajax({
+        url: 'https://notnav.000webhostapp.com/pleaseClapCount.php',
+        data: k,
+        dataType: 'json',
+        success: function (data) {
+          $("#counter").html(String(data) + "<br> Claps")
+        },
+        error: function (e) {
+          console.log(e)
+        }
+      })
+    }
+  </script>
 
-  </body>
+</body>
 
 </html>
